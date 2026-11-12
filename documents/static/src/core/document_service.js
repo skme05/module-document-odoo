@@ -92,10 +92,13 @@ export class DocumentService {
         this.hasFolderEditorAccess =
             this.userIsInternal ||
             (await this.orm.call("documents.operation", "get_any_editor_destination")).length > 0;
+        // Show the "Info & tags" panel by default (unless the user closed it before)
+        // so that tags are directly reachable, as they were in Odoo 18.
+        const storedVisibility = localStorage.getItem("documentsChatterVisible");
         const initialState =
             !this.env.isSmall &&
             this.userIsInternal &&
-            JSON.parse(localStorage.getItem("documentsChatterVisible"));
+            (storedVisibility === null ? true : JSON.parse(storedVisibility));
         this.rightPanelReactive = reactive(
             {
                 visible: initialState,

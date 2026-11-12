@@ -5676,6 +5676,36 @@ msgstr ""
 "•\n"
 "                                        <b>URL</b>"
 
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
+msgid "Linked To"
+msgstr "Lié à"
+
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
+msgid "Add a tag..."
+msgstr "Ajouter une étiquette..."
+
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
+msgid "alias"
+msgstr "alias"
+
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
+msgid "Email"
+msgstr "E-mail"
+
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
+msgid "Remove link"
+msgstr "Supprimer le lien"
+
 #~ msgid "Can view or edit, upload, and share their own or shared documents."
 #~ msgstr ""
 #~ "Peut consulter ou modifier, uploader et partager ses propres documents ou "
