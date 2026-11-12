@@ -29,7 +29,7 @@
                             <field name="folder_id"
                                 options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"
                                 widget="documents_folder_many2one"/>
-                            <field name="tag_ids" widget="many2many_tags"/>
+                            <field name="tag_ids" widget="many2many_tags" context="{'documents_tag_show_facet': True}"/>
                         </group>
                     </group>
                     <label for="activity_note"/>

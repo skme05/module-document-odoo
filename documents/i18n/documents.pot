@@ -4832,3 +4832,13 @@ msgstr ""
 msgid "Text shown when hovering on this tag category"
 msgstr ""
 
+#. module: documents
+#: model:ir.model.constraint,message:documents.constraint_documents_tag__tag_name_facet_unique
+msgid "This tag name is already used in this category"
+msgstr ""
+
+#. module: documents
+#: model:ir.model.constraint,message:documents.constraint_documents_tag__tag_name_no_facet_unique
+msgid "Tag name already used (tags without category)"
+msgstr ""
+

@@ -83,7 +83,7 @@ class AccountJournal(models.Model):
     def _documents_ensure_journal_tags_created(self):
         """Create the missing tags and returns all tags for the journals."""
         tag_names = set(self.mapped('name'))
-        existing = self.env['documents.tag'].search([('name', 'in', list(tag_names))])
+        existing = self.env['documents.tag'].search([('name', 'in', list(tag_names)), ('facet_id', '=', False)])
         created = self.env['documents.tag'].create([{
             'name': tag_name,
         } for tag_name in tag_names - set(existing.mapped('name'))])

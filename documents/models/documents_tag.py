@@ -25,10 +25,27 @@ class DocumentsTag(models.Model):
         'documents.facet', string="Category", index=True, ondelete='set null',
         help="Category under which the tag is grouped in the left panel.")
 
-    _tag_name_unique = models.Constraint(
-        'unique (name)',
-        "Tag name already used",
+    # The same tag name can be used in several categories (e.g. "2024" in
+    # "Fiscal years" and in "Payslips"), but only once per category, and only
+    # once among the tags without category.
+    _tag_name_facet_unique = models.Constraint(
+        'unique (name, facet_id)',
+        "This tag name is already used in this category",
     )
+    _tag_name_no_facet_unique = models.UniqueIndex(
+        "(name) WHERE facet_id IS NULL",
+        "Tag name already used (tags without category)",
+    )
+
+    @api.depends('name', 'facet_id.name')
+    @api.depends_context('documents_tag_show_facet')
+    def _compute_display_name(self):
+        """Show "Category > Tag" in the tag selection dropdowns, so that tags
+        with the same name in different categories can be told apart."""
+        if not self.env.context.get('documents_tag_show_facet'):
+            return super()._compute_display_name()
+        for tag in self:
+            tag.display_name = f"{tag.facet_id.name} > {tag.name}" if tag.facet_id else tag.name
 
     @api.ondelete(at_uninstall=False)
     def _unlink_except_used_in_server_action(self):

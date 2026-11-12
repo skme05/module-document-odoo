@@ -5749,6 +5749,16 @@ msgstr "Catégorie sous laquelle l'étiquette est regroupée dans le panneau de 
 msgid "Text shown when hovering on this tag category"
 msgstr "Texte affiché au survol de cette catégorie d'étiquettes"
 
+#. module: documents
+#: model:ir.model.constraint,message:documents.constraint_documents_tag__tag_name_facet_unique
+msgid "This tag name is already used in this category"
+msgstr "Ce nom d'étiquette est déjà utilisé dans cette catégorie"
+
+#. module: documents
+#: model:ir.model.constraint,message:documents.constraint_documents_tag__tag_name_no_facet_unique
+msgid "Tag name already used (tags without category)"
+msgstr "Nom d'étiquette déjà utilisé (étiquettes sans catégorie)"
+
 #~ msgid "Can view or edit, upload, and share their own or shared documents."
 #~ msgstr ""
 #~ "Peut consulter ou modifier, uploader et partager ses propres documents ou "

@@ -127,6 +127,7 @@
                     <div class="flex-grow-1">
                         <DocumentsDetailsMany2ManyTagsField
                             name="'tag_ids'"
+                            context="{'documents_tag_show_facet': true}"
                             readonly="userPermissionViewOnly"
                             record="record"
                             canCreate="true"
@@ -214,6 +215,7 @@
                         <div class="flex-grow-1">
                             <DocumentsDetailsMany2ManyTagsField
                                 name="'alias_tag_ids'"
+                                context="{'documents_tag_show_facet': true}"
                                 readonly="userPermissionViewOnly"
                                 record="record"
                                 canCreate="true"
