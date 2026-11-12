@@ -2540,6 +2540,23 @@ class DocumentsDocument(models.Model):
         return new_documents
 
     @api.model
+    def search_panel_select_multi_range(self, field_name, **kwargs):
+        """Group the tags of the left panel by category (facet), with the color,
+        sequence and tooltip of the category, as before Odoo 18."""
+        result = super().search_panel_select_multi_range(field_name, **kwargs)
+        if field_name != 'tag_ids' or kwargs.get('group_by') != 'facet_id':
+            return result
+        facet_ids = {v['group_id'] for v in result.get('values', []) if v.get('group_id')}
+        facets = {facet.id: facet for facet in self.env['documents.facet'].browse(facet_ids)}
+        for value in result.get('values', []):
+            facet = facets.get(value.get('group_id'))
+            if facet:
+                value['group_sequence'] = facet.sequence
+                value['group_tooltip'] = facet.tooltip
+                value['color_index'] = facet.color
+        return result
+
+    @api.model
     def search_panel_select_range(self, field_name, **kwargs):
         def convert_user_folder_ids_to_int(vals):
             """Convert user_folder_id to int where applicable to construct categoryTree matching on id of parent."""

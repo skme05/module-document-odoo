@@ -35,6 +35,12 @@
         action="tag_action"
         sequence="10"/>
 
+    <menuitem name="Tag Categories"
+        id="documents.facet_menu"
+        parent="documents.structure"
+        action="facet_action"
+        sequence="11"/>
+
     <menuitem name="Activities"
         id="documents.mail_activities"
         parent="documents.Config"

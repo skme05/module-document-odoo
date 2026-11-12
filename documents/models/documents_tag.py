@@ -21,6 +21,9 @@ class DocumentsTag(models.Model):
     color = fields.Integer('Color', default=_get_default_color)
     tooltip = fields.Char(help="Text shown when hovering on this tag", string="Tooltip")  # Deprecated
     document_ids = fields.Many2many('documents.document', 'document_tag_rel')
+    facet_id = fields.Many2one(
+        'documents.facet', string="Category", index=True, ondelete='set null',
+        help="Category under which the tag is grouped in the left panel.")
 
     _tag_name_unique = models.Constraint(
         'unique (name)',

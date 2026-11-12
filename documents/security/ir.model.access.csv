@@ -24,3 +24,6 @@ access_documents_sharing_access_user,access.documents.sharing.access.user,docume
 
 access_documents_operation_portal,documents_operation_portal,documents.model_documents_operation,base.group_portal,1,1,1,0
 access_documents_operation_user,documents_operation_user,documents.model_documents_operation,base.group_user,1,1,1,0
+access_documents_facet_base_group_portal,documents_facet_base_group_portal,model_documents_facet,base.group_portal,1,0,0,0
+access_documents_facet_base_group_user,documents_facet_base_group_user,model_documents_facet,base.group_user,1,0,0,0
+access_documents_facet_group_manager,documents_facet_group_manager,model_documents_facet,documents.group_documents_manager,1,1,1,1

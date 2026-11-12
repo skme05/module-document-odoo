@@ -4795,3 +4795,40 @@ msgstr ""
 msgid "There is no document you can tag in your selection."
 msgstr ""
 
+#. module: documents
+#: model:ir.actions.act_window,name:documents.facet_action
+#: model:ir.ui.menu,name:documents.facet_menu
+msgid "Tag Categories"
+msgstr ""
+
+#. module: documents
+#: model:ir.model,name:documents.model_documents_facet
+msgid "Tag Category"
+msgstr ""
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_tag__facet_id
+#: model_terms:ir.ui.view,arch_db:documents.tag_view_search
+msgid "Category"
+msgstr ""
+
+#. module: documents
+#: model_terms:ir.ui.view,arch_db:documents.facet_view_form
+msgid "Category Name"
+msgstr ""
+
+#. module: documents
+#: model_terms:ir.ui.view,arch_db:documents.facet_view_form
+msgid "e.g. Fiscal years"
+msgstr ""
+
+#. module: documents
+#: model:ir.model.fields,help:documents.field_documents_tag__facet_id
+msgid "Category under which the tag is grouped in the left panel."
+msgstr ""
+
+#. module: documents
+#: model:ir.model.fields,help:documents.field_documents_facet__tooltip
+msgid "Text shown when hovering on this tag category"
+msgstr ""
+
