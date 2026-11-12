@@ -246,7 +246,7 @@ export class DocumentsSearchModel extends SearchModel {
     async _reloadSearchPanel(skipUpdate = false) {
         await this._fetchSections(
             this.getSections((s) => s.type === "category"),
-            []
+            this.getSections((s) => s.type === "filter")
         );
         if (!skipUpdate) {
             this.trigger("update-search-panel");
@@ -409,6 +409,9 @@ export class DocumentsSearchModel extends SearchModel {
             throw new Error(_t("Not allowed, select a folder")); // safety, shouldn't be possible
         }
         state.sections.forEach((section) => {
+            if (section[1].type !== "category") {
+                return;
+            }
             section[1].values = [section[1].values[0]]; // Keep "All"
             section[1].activeValueId = false;
         });

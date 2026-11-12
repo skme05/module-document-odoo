@@ -53,6 +53,8 @@
                 </group>
                 <searchpanel class="o_documents_search_panel">
                     <field name="user_folder_id" string="Folders"/>
+                    <!-- Tags filter in the left panel (with document counters), as before -->
+                    <field name="tag_ids" string="Tags" select="multi" icon="fa-tag" expand="1" enable_counters="1"/>
                 </searchpanel>
             </search>
         </field>

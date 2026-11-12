@@ -4789,3 +4789,9 @@ msgstr ""
 msgid "Remove link"
 msgstr ""
 
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/views/helper/documents_draggable.js:0
+msgid "There is no document you can tag in your selection."
+msgstr ""
+

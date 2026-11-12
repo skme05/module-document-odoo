@@ -9,6 +9,13 @@
         </xpath>
         <xpath expr="//button[@t-on-click='toggleSidebar']" position="replace"/>
         <xpath expr="//header" position="replace"/>
+        <!-- Keep a title for the filter sections (Tags), the folder tree needs none -->
+        <xpath expr="//t[@t-call='web.SearchPanel.Section']" position="before">
+            <header t-if="section.type === 'filter'" class="o_search_panel_section_header pt-4 pb-2 text-uppercase cursor-default">
+                <i t-attf-class="fa {{ section.icon }} o_search_panel_section_icon text-warning me-2"/>
+                <b t-esc="section.description"/>
+            </header>
+        </xpath>
     </t>
 
     <t t-name="documents.SearchPanel.Regular" t-inherit="documents.SearchPanelContent" t-inherit-mode="primary"/>
@@ -60,10 +67,11 @@
 
     <t t-name="documents.SearchPanel.FiltersGroup" t-inherit="web.SearchPanel.FiltersGroup" t-inherit-mode="primary">
         <xpath expr="//li[hasclass('o_search_panel_filter_value')]" position="attributes">
-            <attribute name="class">o_documents_search_panel_editable</attribute>
+            <attribute name="class" add="o_documents_search_panel_editable" separator=" "/>
+            <attribute name="t-att-data-value-id">valueId</attribute>
         </xpath>
-        <xpath expr="//div//label//span[hasclass('o_search_panel_counter')]" position="replace"/>
-        <xpath expr="//div//label//span[hasclass('o_search_panel_counter')]" position="attributes">
+        <!-- Keep the counter (number of documents per tag) visible -->
+        <xpath expr="//label//span[hasclass('o_search_panel_counter')]" position="attributes">
             <attribute name="class" add="ms-2 me-3" remove="mx-2" separator=" "/>
         </xpath>
     </t>

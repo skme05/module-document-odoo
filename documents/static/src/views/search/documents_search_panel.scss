@@ -10,8 +10,15 @@
     .o_documents_search_panel_section_edit {
         cursor: pointer;
     }
-    .o_documents_search_panel_editable:hover .o_search_panel_counter {
-        display: none;
+    // Tags section: keep the number of documents visible next to each tag
+    .o_search_panel_filter {
+        > ul {
+            margin-right: 10px;
+            padding-left: 0.5rem;
+        }
+        .o_search_panel_filter_value {
+            padding: 1px 0;
+        }
     }
     .o_search_panel_category {
         ul {

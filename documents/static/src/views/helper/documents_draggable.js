@@ -94,6 +94,19 @@ export const useDraggableDocuments = makeDraggableHook({
         // Search Panel Event Handlers
         const onSearchPanelFolderPointerOver = (ev) => {
             const targetClasses = ev.target.classList;
+            // Dragging over a tag of the "Tags" section: dropping adds the tag
+            const tagEl = ev.target.closest(".o_search_panel_filter_value");
+            if (tagEl) {
+                for (const selected of searchPanelEl.querySelectorAll(
+                    ":scope .o_drag_over_selector"
+                )) {
+                    selected.classList.remove("o_drag_over_selector");
+                }
+                this._checkTagTargetValidity(model, current.dragMessage, current.dragMessageText);
+                ref.el.classList.remove("o_documents_dnd_shortcut");
+                addClass(tagEl, "o_drag_over_selector");
+                return;
+            }
             if (
                 targetClasses.contains("o_search_panel_label") ||
                 targetClasses.contains("o_search_panel_label_title") ||
@@ -201,6 +214,16 @@ export const useDraggableDocuments = makeDraggableHook({
         if (this.isInvalidTarget) {
             return;
         }
+        const tagElement = target.closest(".o_search_panel_filter_value");
+        if (tagElement) {
+            const tagId = parseInt(tagElement.dataset.valueId);
+            const recordIds = this._getTaggableRecordIds(model);
+            if (tagId && recordIds.length) {
+                // Writes the tag then triggers a reload of the view and the counters
+                await model.env.searchModel.updateRecordTagId(recordIds, tagId);
+            }
+            return;
+        }
         const targetElement =
             target.closest(".o_search_panel_category_value") ||
             target.closest(".o_kanban_record") ||
@@ -264,6 +287,24 @@ export const useDraggableDocuments = makeDraggableHook({
         model.load();
         model.notify();
         model.env.searchModel._reloadSearchModel(true);
+    },
+
+    _getTaggableRecordIds(model) {
+        return this._getMovableRecords(model)
+            .filter((record) => record.data.type !== "folder")
+            .map((record) => record.data.id);
+    },
+
+    _checkTagTargetValidity(model, dragMessage, dragMessageText) {
+        this.isInvalidTarget = !this._getTaggableRecordIds(model).length;
+        if (this.isInvalidTarget) {
+            this._setErrorMessage(
+                dragMessage,
+                _t("There is no document you can tag in your selection.")
+            );
+        } else {
+            this._resetDragMessage(dragMessage, dragMessageText);
+        }
     },
 
     _getMovableRecords(model) {

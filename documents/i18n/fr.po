@@ -5706,6 +5706,12 @@ msgstr "E-mail"
 msgid "Remove link"
 msgstr "Supprimer le lien"
 
+#. module: documents
+#. odoo-javascript
+#: code:addons/documents/static/src/views/helper/documents_draggable.js:0
+msgid "There is no document you can tag in your selection."
+msgstr "Aucun document de votre sélection ne peut recevoir d'étiquette."
+
 #~ msgid "Can view or edit, upload, and share their own or shared documents."
 #~ msgstr ""
 #~ "Peut consulter ou modifier, uploader et partager ses propres documents ou "
