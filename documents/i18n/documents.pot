@@ -1205,6 +1205,7 @@ msgstr ""
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_tag__color
+#: model:ir.model.fields,field_description:documents.field_documents_facet__color
 msgid "Color"
 msgstr ""
 
@@ -1355,6 +1356,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__create_uid
 #: model:ir.model.fields,field_description:documents.field_documents_tag__create_uid
 #: model_terms:ir.ui.view,arch_db:documents.document_view_search
+#: model:ir.model.fields,field_description:documents.field_documents_facet__create_uid
 msgid "Created by"
 msgstr ""
 
@@ -1366,6 +1368,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__create_date
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__create_date
 #: model:ir.model.fields,field_description:documents.field_documents_tag__create_date
+#: model:ir.model.fields,field_description:documents.field_documents_facet__create_date
 msgid "Created on"
 msgstr ""
 
@@ -1528,6 +1531,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:documents.field_res_partner__display_name
 #: model:ir.model.fields,field_description:documents.field_res_users__display_name
+#: model:ir.model.fields,field_description:documents.field_documents_facet__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -2218,6 +2222,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_res_config_settings__id
 #: model:ir.model.fields,field_description:documents.field_res_partner__id
 #: model:ir.model.fields,field_description:documents.field_res_users__id
+#: model:ir.model.fields,field_description:documents.field_documents_facet__id
 msgid "ID"
 msgstr ""
 
@@ -2518,6 +2523,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__write_uid
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__write_uid
 #: model:ir.model.fields,field_description:documents.field_documents_tag__write_uid
+#: model:ir.model.fields,field_description:documents.field_documents_facet__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -2529,6 +2535,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__write_date
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__write_date
 #: model:ir.model.fields,field_description:documents.field_documents_tag__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_facet__write_date
 msgid "Last Updated on"
 msgstr ""
 
@@ -2878,6 +2885,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_document__name
 #: model:ir.model.fields,field_description:documents.field_documents_request_wizard__name
 #: model:ir.model.fields,field_description:documents.field_documents_tag__name
+#: model:ir.model.fields,field_description:documents.field_documents_facet__name
 msgid "Name"
 msgstr ""
 
@@ -3604,6 +3612,7 @@ msgstr ""
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_document__sequence
 #: model:ir.model.fields,field_description:documents.field_documents_tag__sequence
+#: model:ir.model.fields,field_description:documents.field_documents_facet__sequence
 msgid "Sequence"
 msgstr ""
 
@@ -3861,6 +3870,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_document__tag_ids
 #: model:ir.model.fields,field_description:documents.field_documents_request_wizard__tag_ids
 #: model:ir.ui.menu,name:documents.category_menu
+#: model:ir.model.fields,field_description:documents.field_documents_facet__tag_ids
 msgid "Tags"
 msgstr ""
 
@@ -4114,6 +4124,7 @@ msgstr ""
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_tag__tooltip
 #: model_terms:ir.ui.view,arch_db:documents.tag_view_form
+#: model:ir.model.fields,field_description:documents.field_documents_facet__tooltip
 msgid "Tooltip"
 msgstr ""
 

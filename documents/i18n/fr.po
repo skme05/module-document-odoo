@@ -1550,7 +1550,7 @@ msgstr "Ajouter une URL"
 #. odoo-javascript
 #: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
 msgid "Add an alias tag..."
-msgstr "Ajouter un alias d'étiquette..."
+msgstr "Ajouter une étiquette d'alias..."
 
 #. module: documents
 #: model:ir.model.fields.selection,name:documents.selection__documents_operation__operation__add
@@ -2016,6 +2016,7 @@ msgstr "Fermer les outils de division"
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_tag__color
+#: model:ir.model.fields,field_description:documents.field_documents_facet__color
 msgid "Color"
 msgstr "Couleur"
 
@@ -2166,6 +2167,7 @@ msgstr "Créer des raccourcis dans %(folder_name)s"
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__create_uid
 #: model:ir.model.fields,field_description:documents.field_documents_tag__create_uid
 #: model_terms:ir.ui.view,arch_db:documents.document_view_search
+#: model:ir.model.fields,field_description:documents.field_documents_facet__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
@@ -2177,6 +2179,7 @@ msgstr "Créé par"
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__create_date
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__create_date
 #: model:ir.model.fields,field_description:documents.field_documents_tag__create_date
+#: model:ir.model.fields,field_description:documents.field_documents_facet__create_date
 msgid "Created on"
 msgstr "Créé le"
 
@@ -2236,7 +2239,7 @@ msgstr "Supprimer définitivement"
 #. odoo-python
 #: code:addons/documents/models/documents_access_tracking.py:0
 msgid "Deleted %(model_name)s (#%(record_id)s)"
-msgstr ""
+msgstr "%(model_name)s supprimé (#%(record_id)s)"
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_res_config_settings__deletion_delay
@@ -2340,6 +2343,7 @@ msgstr "Découvrable"
 #: model:ir.model.fields,field_description:documents.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:documents.field_res_partner__display_name
 #: model:ir.model.fields,field_description:documents.field_res_users__display_name
+#: model:ir.model.fields,field_description:documents.field_documents_facet__display_name
 msgid "Display Name"
 msgstr "Nom d'affichage"
 
@@ -3037,6 +3041,7 @@ msgstr "Historique"
 #: model:ir.model.fields,field_description:documents.field_res_config_settings__id
 #: model:ir.model.fields,field_description:documents.field_res_partner__id
 #: model:ir.model.fields,field_description:documents.field_res_users__id
+#: model:ir.model.fields,field_description:documents.field_documents_facet__id
 msgid "ID"
 msgstr "ID"
 
@@ -3352,6 +3357,7 @@ msgstr "Dernier accès le"
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__write_uid
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__write_uid
 #: model:ir.model.fields,field_description:documents.field_documents_tag__write_uid
+#: model:ir.model.fields,field_description:documents.field_documents_facet__write_uid
 msgid "Last Updated by"
 msgstr "Mis à jour par"
 
@@ -3363,6 +3369,7 @@ msgstr "Mis à jour par"
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__write_date
 #: model:ir.model.fields,field_description:documents.field_documents_sharing_access__write_date
 #: model:ir.model.fields,field_description:documents.field_documents_tag__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_facet__write_date
 msgid "Last Updated on"
 msgstr "Mis à jour le"
 
@@ -3716,6 +3723,7 @@ msgstr "Les rôles NULL doivent avoir une date d'accès définie."
 #: model:ir.model.fields,field_description:documents.field_documents_document__name
 #: model:ir.model.fields,field_description:documents.field_documents_request_wizard__name
 #: model:ir.model.fields,field_description:documents.field_documents_tag__name
+#: model:ir.model.fields,field_description:documents.field_documents_facet__name
 msgid "Name"
 msgstr "Nom"
 
@@ -3802,7 +3810,7 @@ msgstr "Aucun alias configuré"
 #. odoo-javascript
 #: code:addons/documents/static/src/components/documents_details_panel/documents_details_panel.xml:0
 msgid "No alias tags"
-msgstr "Aucun tag d’alias"
+msgstr "Aucune étiquette d’alias"
 
 #. module: documents
 #. odoo-javascript
@@ -3887,7 +3895,7 @@ msgstr "Aucun"
 #. odoo-javascript
 #: code:addons/documents/static/src/views/search/documents_search_model.js:0
 msgid "Not allowed, select a folder"
-msgstr ""
+msgstr "Non autorisé, sélectionnez un dossier"
 
 #. module: documents
 #. odoo-javascript
@@ -4067,7 +4075,7 @@ msgstr "Expiration d’origine"
 #: model_terms:ir.ui.view,arch_db:documents.document_view_search
 #: model_terms:ir.ui.view,arch_db:documents.documents_sharing_view_form
 msgid "Owner"
-msgstr "Détenteur"
+msgstr "Propriétaire"
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_sharing__owner_id
@@ -4457,6 +4465,7 @@ msgstr "Envoyé au partenaire lors du partage d’un document avec lui"
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_document__sequence
 #: model:ir.model.fields,field_description:documents.field_documents_tag__sequence
+#: model:ir.model.fields,field_description:documents.field_documents_facet__sequence
 msgid "Sequence"
 msgstr "Séquence"
 
@@ -4722,6 +4731,7 @@ msgstr "Nom de l'étiquette déjà utilisé"
 #: model:ir.model.fields,field_description:documents.field_documents_document__tag_ids
 #: model:ir.model.fields,field_description:documents.field_documents_request_wizard__tag_ids
 #: model:ir.ui.menu,name:documents.category_menu
+#: model:ir.model.fields,field_description:documents.field_documents_facet__tag_ids
 msgid "Tags"
 msgstr "Étiquettes"
 
@@ -4993,6 +5003,7 @@ msgstr "Toggle favori"
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_tag__tooltip
 #: model_terms:ir.ui.view,arch_db:documents.tag_view_form
+#: model:ir.model.fields,field_description:documents.field_documents_facet__tooltip
 msgid "Tooltip"
 msgstr "Infobulle"
 
